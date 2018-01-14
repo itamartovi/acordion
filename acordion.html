@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<style>
+		section {
+		border: 1px solid black ;
+		}
+		p{
+			dispaly:none;
+		}
+		</style>
+		<script
+			src="https://code.jquery.com/jquery-3.2.1.min.js"
+			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			crossorigin="anonymous"></script>
+		<script>
+			$(function(){ //like "main" in C
+			
+		    /*function handleClickEvant(){
+				alert("h1 clicked");
+				$("h1").css("color","red");
+			}
+			$("h1").on("click",handleClickEvant);*/
+			
+			function handleDownEvant(){
+				$("h1").css("color","red");
+			}
+			function handleUpEvant(){
+				$("h1").css("color","black");
+			}
+			$("h1").on("mousedown",handleDownEvant);
+			$("h1").on("mouseup",handleUpEvant);
+			
+			$(".showInfo").on("click",function(){
+			/*$("p").hide();*/
+                $("p").not($(this).next()).hide();
+				$(this).next().toggle();
+			});
+		});
+		</script>
+	</head>
+	<body>
+	<section>
+		<h1>Hello World</h1>
+		<button class="showInfo">Toggle more information</button>
+		<p>The integrity and crossorigin attributes are used for Subresource Integrity (SRI
+		checking. This allows browsers to ensure that resources hosted on third-party servers
+		have not been tampered with. Use of SRI is recommended as a best-practice, whenever
+		libraries are loaded from a third-party source. Read more at </p>
+	</section>
+	<section>
+		<button class="showInfo">Toggle more information</button>
+		<p>The integrity and crossorigin attributes are used for Subresource Integrity (SRI
+		checking. This allows browsers to ensure that resources hosted on third-party servers
+		have not been tampered with. Use of SRI is recommended as a best-practice, whenever
+		libraries are loaded from a third-party source. Read more at </p>
+	</section>
+	<section>
+		<button class="showInfo">Toggle more information</button>
+		<p>The integrity and crossorigin attributes are used for Subresource Integrity (SRI
+		checking. This allows browsers to ensure that resources hosted on third-party servers
+		have not been tampered with. Use of SRI is recommended as a best-practice, whenever
+		libraries are loaded from a third-party source. Read more at </p>
+	</section>
+  </html>
